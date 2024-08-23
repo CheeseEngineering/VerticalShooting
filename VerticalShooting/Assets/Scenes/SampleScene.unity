@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planeBulletGo: {fileID: 1219280969153904604, guid: f6f2d4809841f4e47bba455323ced9de, type: 3}
   animator: {fileID: 162792221}
-  isHit: 0
+  hp: 100
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planeGo: {fileID: 1518034797}
   planeBulletGo: {fileID: 1219280969153904604, guid: f6f2d4809841f4e47bba455323ced9de, type: 3}
+  enemyAGo: {fileID: 162792220}
 --- !u!1 &1581873239
 GameObject:
   m_ObjectHideFlags: 0

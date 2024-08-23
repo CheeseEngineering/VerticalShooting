@@ -8,6 +8,9 @@ public class PlaneController : MonoBehaviour
     public GameObject planeBulletGo;
     private PlaneBulletController planeBulletController;
 
+    public GameObject enemyAGo;
+    private EnemyAController enemyAController;
+
     private Rigidbody2D rg2D;
     private Animator animator;
 
@@ -21,6 +24,7 @@ public class PlaneController : MonoBehaviour
         animator = planeGo.GetComponent<Animator>();
         rg2D = planeGo.GetComponent<Rigidbody2D>();
         planeBulletController = planeBulletGo.GetComponent<PlaneBulletController>();
+        enemyAController = enemyAGo.GetComponent<EnemyAController>();
     }
     void Update()
     {
@@ -58,5 +62,11 @@ public class PlaneController : MonoBehaviour
             Instantiate(planeBulletGo);
             Debug.Log("Shoot");
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        enemyAController.hp -= 100;
+        Debug.Log("적기와 충돌하였습니다.");
     }
 }

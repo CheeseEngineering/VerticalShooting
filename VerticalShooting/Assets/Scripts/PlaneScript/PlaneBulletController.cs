@@ -7,7 +7,7 @@ public class PlaneBulletController : MonoBehaviour
     public GameObject planeGo;
     private PlaneController planeController;
 
-    public float damage = 10;
+    public float damage = 40;
 
     void Start()
     {

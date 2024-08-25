@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5599956194315964808
+--- !u!1 &5164953657503511179
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7481140520928090337}
-  - component: {fileID: 3864658476372766341}
-  - component: {fileID: 437993964801197553}
-  - component: {fileID: 2549222474381696449}
-  - component: {fileID: -2997634442311506013}
+  - component: {fileID: 3532079369305790149}
+  - component: {fileID: 6213862468485840664}
+  - component: {fileID: 1123635395444181113}
+  - component: {fileID: 7826352582092401281}
+  - component: {fileID: 1589891991632936620}
+  - component: {fileID: 3954826169356311413}
   m_Layer: 0
-  m_Name: PlaneBullet
+  m_Name: EnemyA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7481140520928090337
+--- !u!4 &3532079369305790149
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5599956194315964808}
+  m_GameObject: {fileID: 5164953657503511179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.43, z: 0}
+  m_LocalPosition: {x: 2, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3864658476372766341
+--- !u!212 &6213862468485840664
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5599956194315964808}
+  m_GameObject: {fileID: 5164953657503511179}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,51 +77,45 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 874343242196921964, guid: 5547e92425a5b584ba72bba3566474f0, type: 3}
+  m_Sprite: {fileID: 8414478535512612329, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.33333334, y: 0.45833334}
+  m_Size: {x: 0.5, y: 0.45833334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &437993964801197553
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!95 &1123635395444181113
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5599956194315964808}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!70 &2549222474381696449
-CapsuleCollider2D:
+  m_GameObject: {fileID: 5164953657503511179}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d91dab9cf5130746a2528903cb99dc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &7826352582092401281
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5599956194315964808}
+  m_GameObject: {fileID: 5164953657503511179}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -143,23 +138,61 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.04}
-  m_Size: {x: 0.2515059, y: 0.32974726}
-  m_Direction: 0
---- !u!114 &-2997634442311506013
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1942372
+--- !u!50 &1589891991632936620
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5164953657503511179}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &3954826169356311413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5599956194315964808}
+  m_GameObject: {fileID: 5164953657503511179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b03b13a34efb7f740b357f7ee60f528e, type: 3}
+  m_Script: {fileID: 11500000, guid: af9f3d9a9f39f784abacf5ed9471ec97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planeGo: {fileID: 0}
-  damage: 40
+  planeBulletGo: {fileID: 5599956194315964808, guid: f6f2d4809841f4e47bba455323ced9de, type: 3}
+  LaunchedBombGo: {fileID: 2108867175634189928, guid: 8b7405781f6a8d34eb762761b215a44e, type: 3}
+  gameDirectorGo: {fileID: 0}
+  DestroyGo: {fileID: 8014684518093277774, guid: 15047dcfd24a48840a9cb626f3c81a67, type: 3}
+  enemyBulletGo: {fileID: 490626863428041239, guid: 6bb261dd9a29e4f49ab19e03998478ce, type: 3}
+  BombGo: {fileID: 4554405719760682201, guid: 9094cc80c63f2fe4884cbfc8c03bdda5, type: 3}
+  CoinGo: {fileID: 3061275206561744505, guid: ce75bbd5b5392b94ab7a58f0e1d0ee05, type: 3}
+  PowerGo: {fileID: 2679845784243963340, guid: c8c3b4933de71844283c4344629f8357, type: 3}
+  animator: {fileID: 1123635395444181113}
+  hp: 100
+  isDead: 0
+  enemyAScore: 10
+  fireJam: 0

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5164953657503511179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 3, z: 0}
+  m_LocalPosition: {x: 1, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -187,7 +187,7 @@ MonoBehaviour:
   LaunchedBombGo: {fileID: 2108867175634189928, guid: 8b7405781f6a8d34eb762761b215a44e, type: 3}
   gameDirectorGo: {fileID: 0}
   DestroyGo: {fileID: 8014684518093277774, guid: 15047dcfd24a48840a9cb626f3c81a67, type: 3}
-  enemyBulletGo: {fileID: 490626863428041239, guid: 6bb261dd9a29e4f49ab19e03998478ce, type: 3}
+  enemyBulletGo: {fileID: 490626863428041239, guid: ebed262aa2e54b04a8306e8e218426dc, type: 3}
   BombGo: {fileID: 4554405719760682201, guid: 9094cc80c63f2fe4884cbfc8c03bdda5, type: 3}
   CoinGo: {fileID: 3061275206561744505, guid: ce75bbd5b5392b94ab7a58f0e1d0ee05, type: 3}
   PowerGo: {fileID: 2679845784243963340, guid: c8c3b4933de71844283c4344629f8357, type: 3}

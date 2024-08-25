@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1874452664819178661}
   - component: {fileID: 5449519572597514471}
   - component: {fileID: 3464067739268088850}
+  - component: {fileID: -6114520712501760776}
   m_Layer: 0
   m_Name: EnemyBullet2
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 490626863428041239}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 3.0978138, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -161,4 +162,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf024a0fe9242184192862cffe833c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAGo: {fileID: 6016429028711685177, guid: 9cf6bf098bc4ef945b41a510b97ecd23, type: 3}
+  bulletSpeed: 10
+--- !u!114 &-6114520712501760776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490626863428041239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b714384ce04a6bb45bdf418e3541716f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 10

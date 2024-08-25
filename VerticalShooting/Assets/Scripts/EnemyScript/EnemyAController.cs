@@ -69,6 +69,7 @@ public class EnemyAController : MonoBehaviour
             fireJam = Random.Range(0, 101);
             if (fireJam > 70)
             {
+                enemyBulletGo.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
                 Instantiate(enemyBulletGo);
             }
             fireTimer = 0;
@@ -130,7 +131,7 @@ public class EnemyAController : MonoBehaviour
             animator.SetInteger("isHit", 1);
             this.isHit = true;
         }
-        else if (collision.name == "BOss(Clone)")
+        else if (collision.name == "Boss(Clone)")
         {
             Object.Destroy(this.gameObject);
         }

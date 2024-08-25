@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyBulletController : MonoBehaviour
 {
-    public GameObject enemyAGo;
+    public float bulletSpeed = 1;
     void Start()
     {
-        this.transform.position = new Vector3(enemyAGo.transform.position.x, enemyAGo.transform.position.y - 0.4f, enemyAGo.transform.position.z);
+        bulletSpeed = 1f;
     }
     void Update()
     {
@@ -15,7 +15,7 @@ public class EnemyBulletController : MonoBehaviour
     }
     private void Move()
     {
-        this.transform.Translate(new Vector3(0, -1 * 1f * Time.deltaTime, 0));
+        this.transform.Translate(new Vector3(0, -1 * bulletSpeed* Time.deltaTime, 0));
         if (this.transform.position.y <= -5)
         {
             Object.Destroy(this.gameObject);

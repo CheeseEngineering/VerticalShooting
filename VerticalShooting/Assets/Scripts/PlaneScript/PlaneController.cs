@@ -146,8 +146,9 @@ public class PlaneController : MonoBehaviour
             }
             Object.Destroy(collision.gameObject);
         }
-        else if (collision.name == "Boss(Clone)")
+        else if (collision.name == "Boss(Clone)" ||collision.name == "LaunchedBomb(Clone)")
         {
+
         }
         else
         {

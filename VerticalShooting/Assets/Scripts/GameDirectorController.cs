@@ -45,7 +45,7 @@ public class GameDirectorController : MonoBehaviour
     public bool middleGoNeedInstantiate;
     public bool bottomGoNeedInstantiate;
     private bool IsBossExist=false;
-    private bool BossDead;
+    public bool BossDead;
 
     private int PosX;
     private int PosY;
@@ -172,7 +172,6 @@ public class GameDirectorController : MonoBehaviour
     }
     private void BossSpawner()
     {
-        BossDead = bossGoController.isDead;
         if (!IsBossExist)
         {
             BossTimer += Time.deltaTime;
@@ -187,9 +186,11 @@ public class GameDirectorController : MonoBehaviour
         }
         if (BossDead)
         {
+            Debug.Log("보스 리젠 시작");
             bossGoController.isDead = false;
             BossDead = false;
             IsBossExist = false;
+            BossTimer = 0;
         }
     }
 }

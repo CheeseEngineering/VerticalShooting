@@ -18,6 +18,9 @@ public class BossController : MonoBehaviour
     private GameDirectorController gameDirectorController;
     private PlaneBulletController planeBulletController;
     private LaunchedBombController launchedBombController;
+    private EnemyBullet1Controller BossBullet1GoBulletController;
+    private EnemyBullet2Controller BossBullet2GoBulletController;
+    private EnemyBullet3Controller BossBullet3GoBulletController;
 
     public float hp = 10000;
     private float maxHp = 10000;
@@ -27,6 +30,8 @@ public class BossController : MonoBehaviour
     public float BossScore = 1000;
 
     private float fireTimer;
+    private float fireCount;
+    private float patternCount;
 
     void Start()
     {
@@ -36,6 +41,10 @@ public class BossController : MonoBehaviour
         planeBulletController = planeBulletGo.GetComponent<PlaneBulletController>();
         gameDirectorController = gameDirectorGo.GetComponent<GameDirectorController>();
         launchedBombController = LaunchedBombGo.GetComponent<LaunchedBombController>();
+
+        BossBullet1GoBulletController = BossBullet1Go.GetComponent<EnemyBullet1Controller>();
+        BossBullet2GoBulletController = BossBullet2Go.GetComponent<EnemyBullet2Controller>();
+        BossBullet3GoBulletController = BossBullet3Go.GetComponent<EnemyBullet3Controller>();
     }
     void Update()
     {
@@ -63,10 +72,121 @@ public class BossController : MonoBehaviour
     private void Fire()
     {
         fireTimer += Time.deltaTime;
-        if (fireTimer > 5)
+        if (fireTimer > 5&& patternCount <2)
         {
+            BossBullet1Go.transform.position = new Vector3(-0.83f, this.transform.position.y - 0.4f, this.transform.position.z);
             Instantiate(BossBullet1Go);
+
+            BossBullet1Go.transform.position = new Vector3(-0.6f, this.transform.position.y - 0.4f, this.transform.position.z);
+            Instantiate(BossBullet1Go);
+
+            BossBullet1Go.transform.position = new Vector3(0.6f, this.transform.position.y - 0.4f, this.transform.position.z);
+            Instantiate(BossBullet1Go);
+
+            BossBullet1Go.transform.position = new Vector3(0.83f, this.transform.position.y - 0.4f, this.transform.position.z);
+            Instantiate(BossBullet1Go);
+
+            fireTimer = 0; 
+            patternCount++;
+        }
+        else if(fireTimer > 5 && patternCount < 4 && patternCount >=2)
+        {
+            if (patternCount == 2)
+            {
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, 15f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, -5f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, -5f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, -5f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, -5f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (patternCount == 3)
+            {
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, -15f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, 5f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, 5f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, 5f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+                BossBullet2Go.transform.Rotate(new Vector3(0, 0, 5f));
+                Instantiate(BossBullet2Go);
+
+                BossBullet2Go.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
             fireTimer = 0;
+            patternCount++;
+        }
+        else if (patternCount >= 4)
+        {
+            BossBullet3Go.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, this.transform.position.z);
+            if (fireTimer >= 5)
+            {
+                patternCount++;
+                fireTimer = 0;
+            }
+            if (patternCount == 5)
+            {
+                if (fireTimer >= 0.5)
+                {
+                    if (fireCount < 7)
+                    {
+                        BossBullet3Go.transform.Rotate(new Vector3(0, 0, 20f));
+                        Instantiate(BossBullet3Go);
+                        fireCount++;
+                    }
+                    else if (fireCount >= 7)
+                    {
+                        BossBullet3Go.transform.Rotate(new Vector3(0, 0, -20f));
+                        Instantiate(BossBullet3Go);
+                        fireCount++;
+                    }
+                    else if (fireCount >= 12)
+                    {
+                        BossBullet3Go.transform.Rotate(new Vector3(0, 0, -20f));
+                        Instantiate(BossBullet3Go);
+                        fireCount++;
+                    }
+                    else if (fireCount >= 19)
+                    {
+                        BossBullet3Go.transform.Rotate(new Vector3(0, 0, 20f));
+                        Instantiate(BossBullet3Go);
+                        fireCount++;
+                    }
+
+                    if (fireCount >= 19)
+                    {
+                        patternCount = 0;
+                        BossBullet3Go.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                    }
+                    fireTimer = 0;
+                }
+            }
         }
     }
     private void Hit()
@@ -90,6 +210,7 @@ public class BossController : MonoBehaviour
         {
             this.hp = 0;
             this.isDead = true;
+            gameDirectorController.BossDead = true;
             DestroyGo.transform.position = this.transform.position;
             Instantiate(DestroyGo);
             gameDirectorController.Score += this.BossScore;

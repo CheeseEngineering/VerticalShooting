@@ -126,9 +126,9 @@ MonoBehaviour:
   LaunchedBombGo: {fileID: 2108867175634189928, guid: 8b7405781f6a8d34eb762761b215a44e, type: 3}
   gameDirectorGo: {fileID: 0}
   DestroyGo: {fileID: 5326449537267050657, guid: 582a2ed6950a7384781b1ccb977a2a46, type: 3}
-  BossBullet1Go: {fileID: 490626863428041239, guid: ab8fd34963115714fbe0c5cf82cd2149, type: 3}
-  BossBullet2Go: {fileID: 0}
-  BossBullet3Go: {fileID: 0}
+  BossBullet1Go: {fileID: 2886592780284051053, guid: 6bb261dd9a29e4f49ab19e03998478ce, type: 3}
+  BossBullet2Go: {fileID: 490626863428041239, guid: ab8fd34963115714fbe0c5cf82cd2149, type: 3}
+  BossBullet3Go: {fileID: 2265059999622736012, guid: a1c7392e6ff4f8846a896c4020afed48, type: 3}
   hp: 1000
   isDead: 0
   BossScore: 1000
